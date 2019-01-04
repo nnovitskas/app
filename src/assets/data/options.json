@@ -1,0 +1,52 @@
+"genres" : {
+	"name": "AU",
+	"name": "action",
+	"name": "adventure",
+	"name": "agnst",
+	"name": "comedy",
+	"name": "dark",
+	"name": "detective",
+	"name": "drama",
+	"name": "fairy-tale",
+	"name": "fantasy",
+	"name": "fluff",
+	"name": "history",
+	"name": "humor",
+	"name": "mysticism",
+	"name": "romance",
+	"name": "thriller", 
+},
+
+"characters" : {
+	"general" : {
+		"name": "adventurer",
+		"name": "enthusiast",
+		"name": "hero",
+		"name": "honest citizen",
+		"name": "hothead",
+		"name": "malefactor",
+		"name": "psycho"
+	},
+	"specific1" : {
+		"1" : {
+			"name": "Roger",
+			"gender": "male"
+		},
+		"2": {
+			"name": "Melany",
+			"gender": "female"
+		}
+	}
+},
+
+"keys": {
+	"quotes": {
+		"name": ""
+	},
+	"songs": {
+		"name": ""
+	},
+	"poems": {
+		"name": ""
+	}
+}
