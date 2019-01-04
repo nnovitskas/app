@@ -1,52 +1,74 @@
-"genres" : {
-	"name": "AU",
-	"name": "action",
-	"name": "adventure",
-	"name": "agnst",
-	"name": "comedy",
-	"name": "dark",
-	"name": "detective",
-	"name": "drama",
-	"name": "fairy-tale",
-	"name": "fantasy",
-	"name": "fluff",
-	"name": "history",
-	"name": "humor",
-	"name": "mysticism",
-	"name": "romance",
-	"name": "thriller", 
-},
-
-"characters" : {
-	"general" : {
-		"name": "adventurer",
-		"name": "enthusiast",
-		"name": "hero",
-		"name": "honest citizen",
-		"name": "hothead",
-		"name": "malefactor",
-		"name": "psycho"
-	},
-	"specific1" : {
-		"1" : {
-			"name": "Roger",
-			"gender": "male"
-		},
-		"2": {
-			"name": "Melany",
-			"gender": "female"
-		}
-	}
-},
-
-"keys": {
-	"quotes": {
-		"name": ""
-	},
-	"songs": {
-		"name": ""
-	},
-	"poems": {
-		"name": ""
-	}
+{
+  "genres": [
+    {"name": "AU"},
+    {"name": "action"},
+    {"name": "adventure"},
+    {"name": "agnst"},
+    {"name": "comedy"},
+    {"name": "dark"},
+    {"name": "detective"},
+    {"name": "drama"},
+    {"name": "fairy-tale"},
+    {"name": "fantasy"},
+    {"name": "fluff"},
+    {"name": "history"},
+    {"name": "humor"},
+    {"name": "mysticism"},
+    {"name": "romance"},
+    {"name": "thriller"}
+  ],
+  "characters": [
+    {
+      "name": "adventurer",
+      "type": "general"
+    },
+    {
+      "name": "enthusiast",
+      "type": "general"
+    },
+    {
+      "name": "hero",
+      "type": "general"
+    },
+    {
+      "name": "honest citizen",
+      "type": "general"
+    },
+    {
+      "name": "hothead",
+      "type": "general"
+    },
+    {
+      "name": "malefactor",
+      "type": "general"
+    },
+    {
+      "name": "psycho",
+      "type": "general"
+    },
+    {
+      "name": "Roger",
+      "type": "specific1",
+      "gender": "male"
+    },
+    {
+      "name": "Melany",
+      "type": "specific1",
+      "gender": "female"
+    }
+  ],
+  "keys": [
+    {
+      "name": "To be, or not to be, that is the question",
+      "type": "quote"
+    },
+    {
+      "name": "It's My Life",
+      "type": "song"
+    },
+    {
+      "name": "In Your Heart, Thomas S. Carver",
+      "type": "poem"
+    }
+  ]
 }
