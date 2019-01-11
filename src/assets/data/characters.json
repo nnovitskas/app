@@ -1,0 +1,40 @@
+[
+  {
+    "name": "adventurer",
+    "type": "general"
+  },
+  {
+    "name": "enthusiast",
+    "type": "general"
+  },
+  {
+    "name": "hero",
+    "type": "general"
+  },
+  {
+    "name": "honest citizen",
+    "type": "general"
+  },
+  {
+    "name": "hothead",
+    "type": "general"
+  },
+  {
+    "name": "malefactor",
+    "type": "general"
+  },
+  {
+    "name": "psycho",
+    "type": "general"
+  },
+  {
+    "name": "Roger",
+    "type": "specific1",
+    "gender": "male"
+  },
+  {
+    "name": "Melany",
+    "type": "specific1",
+    "gender": "female"
+  }
+]

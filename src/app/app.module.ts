@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { MainComponent } from './components/main/main.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+import { MainComponent } from './layouts/main/main.component';
 import { GeneratorComponent } from './components/generator/generator.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GenresComponent } from './containers/genres/genres.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { GeneratorComponent } from './components/generator/generator.component';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    GeneratorComponent
+    GeneratorComponent,
+    GenresComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
