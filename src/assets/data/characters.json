@@ -1,31 +1,38 @@
 [
   {
     "name": "adventurer",
-    "type": "general"
+    "type": "general",
+    "gender": "none"
   },
   {
     "name": "enthusiast",
-    "type": "general"
+    "type": "general",
+    "gender": "none"
   },
   {
     "name": "hero",
-    "type": "general"
+    "type": "general",
+    "gender": "none"
   },
   {
     "name": "honest citizen",
-    "type": "general"
+    "type": "general",
+    "gender": "none"
   },
   {
     "name": "hothead",
-    "type": "general"
+    "type": "general",
+    "gender": "none"
   },
   {
     "name": "malefactor",
-    "type": "general"
+    "type": "general",
+    "gender": "none"
   },
   {
     "name": "psycho",
-    "type": "general"
+    "type": "general",
+    "gender": "none"
   },
   {
     "name": "Roger",

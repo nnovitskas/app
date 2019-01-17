@@ -1,21 +1,29 @@
-<p>Genres</p>
-<img src="assets/images/liner.png">
 <div *ngIf="genres">
-  <ul *ngFor="let genre of genres" class="list-group">
-    <li class="list-group-item">{{genre.name}}</li>
+  <ul class="list-group" >
+    <li class="list-group-item" *ngFor="let genre of genres">{{genre.name}}</li>
   </ul>
-</div>
-<!--<div *ngIf="characters">-->
-  <!--<ul *ngFor="let character of characters" class="list-group">-->
-    <!--<li *ngIf="character.type === 'general'" class="list-group-item">{{character.name}}</li>-->
-  <!--</ul>-->
-<!--</div>-->
-<!--<div *ngIf="hints">-->
-  <!--<ul *ngFor="let hint of hints" class="list-group">-->
-    <!--<li class="list-group-item">{{hint.type}}</li>-->
-  <!--</ul>-->
-<!--</div>-->
-<div class="list">
+  <div class="list">
     <div class="button">Generate</div>
+  </div>
+  <a class="advanced" href="#"><span>Advanced</span></a>
 </div>
-<a class="advanced" href="#"><span>Advanced</span></a>
+<div *ngIf="characters">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let character of characters">{{character.name}}</li>
+  </ul>
+  <div class="list">
+    <div class="button">Generate</div>
+  </div>
+  <a class="advanced" href="#"><span>Advanced</span></a>
+</div>
+<div *ngIf="hints">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let hint of hints">{{hint.type}}</li>
+  </ul>
+  <div class="list">
+    <div class="button">Generate</div>
+  </div>
+  <a class="advanced" href="#"><span>Advanced</span></a>
+</div>
+
+

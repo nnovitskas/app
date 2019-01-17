@@ -1,0 +1,23 @@
+<div class="generators row">
+  <div class="col-md-4">
+    <p>Genres</p>
+    <img src="assets/images/liner.png">
+    <div *ngIf="(genres$ | async) as genres">
+      <app-generator [genres]="genres"></app-generator>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <p>Characters</p>
+    <img src="assets/images/liner.png">
+    <div *ngIf="(characters$ | async) as characters">
+      <app-generator [characters]="characters"></app-generator>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <p>Short hints</p>
+    <img src="assets/images/liner.png">
+    <div *ngIf="(hints$ | async) as hints">
+      <app-generator [hints]="hints"></app-generator>
+    </div>
+  </div>
+</div>

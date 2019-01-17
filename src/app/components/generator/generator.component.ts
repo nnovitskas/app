@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
 	selector: 'app-generator',
@@ -7,26 +6,9 @@ import { HttpClient } from '@angular/common/http';
 	styleUrls: ['./generator.component.sass']
 })
 export class GeneratorComponent {
-  constructor (private httpService: HttpClient) { }
-  genres: [];
-  characters: [];
-  hints: [];
+  @Input() characters;
+  @Input() hints;
+  @Input() genres;
 
-  ngOnInit () {
-    this.httpService.get('./assets/data/genres.json').subscribe(
-      data => {
-        this.genres = data as [];
-      }
-    );
-    this.httpService.get('./assets/data/characters.json').subscribe(
-      data => {
-        this.characters = data as [];
-      }
-    );
-    this.httpService.get('./assets/data/hints.json').subscribe(
-      data => {
-        this.hints = data as [];
-      }
-    );
-  }
+  ngOnInit () {}
 }
