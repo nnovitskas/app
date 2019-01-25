@@ -1,6 +1,6 @@
 <div *ngIf="genres">
   <ul class="list-group" >
-    <li class="list-group-item" *ngFor="let genre of genres">{{genre.name}}</li>
+    <li class="list-group-item" *ngFor="let genre of genres"><span appSelected>{{genre.name}}</span></li>
   </ul>
   <div class="list">
     <div class="button">Generate</div>
@@ -9,7 +9,7 @@
 </div>
 <div *ngIf="characters">
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let character of characters">{{character.name}}</li>
+    <li class="list-group-item" *ngFor="let character of characters"><span appSelected>{{character.name}}</span></li>
   </ul>
   <div class="list">
     <div class="button">Generate</div>
@@ -18,7 +18,7 @@
 </div>
 <div *ngIf="hints">
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let hint of hints">{{hint.type}}</li>
+    <li class="list-group-item" *ngFor="let hint of hints"><span appSelected>{{hint.type}}</span></li>
   </ul>
   <div class="list">
     <div class="button">Generate</div>
