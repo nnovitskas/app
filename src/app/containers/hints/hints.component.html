@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <p>Short hints</p>
+    <img src="assets/images/liner.png">
+    <div *ngIf="(hints$ | async) as hints">
+      <app-generator [hints]="hints"></app-generator>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>

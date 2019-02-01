@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { GeneratorContService } from './generator-cont.service';
+import { GeneratorService } from '../generator.service';
+import {tap} from "rxjs/operators";
 
 @Component({
-  selector: 'app-generat-cont',
+  selector: 'app-generator-cont',
   templateUrl: './generator-cont.component.html',
   styleUrls: ['./generator-cont.component.sass']
 })
@@ -10,12 +11,13 @@ export class GeneratorContComponent implements OnInit {
   genres$;
   characters$;
   hints$;
-
-  constructor (private generatorContService: GeneratorContService) {}
+  selectedGenres;
+  selectedCharacters;
+  constructor (private generatorContService: GeneratorService) {}
 
   ngOnInit () {
-    this.genres$ = this.generatorContService.getGeneratorData('genres');
-    this.characters$ = this.generatorContService.getGeneratorData('characters');
+    this.genres$ = this.generatorContService.getGeneratorData('genres').pipe(tap(data => {this.selectedGenres = data}));
+    this.characters$ = this.generatorContService.getGeneratorData('characters').pipe(tap(data => {this.selectedCharacters = data}));
     this.hints$ = this.generatorContService.getGeneratorData('hints');
   }
 }
