@@ -3,21 +3,21 @@
     <p>Genres</p>
     <img src="assets/images/liner.png">
     <div *ngIf="genres$ | async">
-      <app-generator [selectedGenres]="selectedGenres"></app-generator>
+      <app-generator [items]="selectedGenres"></app-generator>
     </div>
   </div>
   <div class="col-md-4">
     <p>Characters</p>
     <img src="assets/images/liner.png">
     <div *ngIf="characters$ | async">
-      <app-generator [selectedCharacters]="selectedCharacters"></app-generator>
+      <app-generator [items]="characters$ | async"></app-generator>
     </div>
   </div>
   <div class="col-md-4">
     <p>Short hints</p>
     <img src="assets/images/liner.png">
     <div *ngIf="(hints$ | async) as hints">
-      <app-generator [hints]="hints"></app-generator>
+      <app-generator [items]="hints"></app-generator>
     </div>
   </div>
 </div>

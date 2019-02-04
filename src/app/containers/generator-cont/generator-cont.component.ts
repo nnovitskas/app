@@ -16,8 +16,8 @@ export class GeneratorContComponent implements OnInit {
   constructor (private generatorContService: GeneratorService) {}
 
   ngOnInit () {
-    this.genres$ = this.generatorContService.getGeneratorData('genres').pipe(tap(data => {this.selectedGenres = data}));
-    this.characters$ = this.generatorContService.getGeneratorData('characters').pipe(tap(data => {this.selectedCharacters = data}));
+    this.genres$ = this.generatorContService.getAllData('genres').pipe(tap(data => {this.selectedGenres = data}));
+    this.characters$ = this.generatorContService.getGeneratorData('characters');
     this.hints$ = this.generatorContService.getGeneratorData('hints');
   }
 }

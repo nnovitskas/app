@@ -1,29 +1,29 @@
-<div *ngIf="selectedGenres">
+<div *ngIf="items">
   <ul class="list-group" >
-    <li class="list-group-item" *ngFor="let genre of selectedGenres"><span [ngClass]="{unselected: genre.isSelected === false}" (click)="unselectOption(genre)">{{genre.name}}</span></li>
+    <li class="list-group-item" *ngFor="let item of items"><span [ngClass]="{unselected: item.isSelected === false}" (click)="unselectOption(item)">{{item.name}}</span></li>
   </ul>
   <div class="list">
     <div class="button" (click)="onGenerate()">Generate</div>
   </div>
   <div *ngIf="generatedGenre">Result: {{ generatedGenre.name }}</div>
 </div>
-<div *ngIf="selectedCharacters">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let character of selectedCharacters"><span [ngClass]="{unselected: character.isSelected === false}" (click)="unselectOption(character)">{{character.name}}</span></li>
-  </ul>
-  <div class="list">
-    <div class="button">Generate</div>
-  </div>
-  <a class="more" routerLink="/characters"><span>Advanced</span></a>
-</div>
-<div *ngIf="hints">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let hint of hints"><span appSelected>{{hint.type}}</span></li>
-  </ul>
-  <div class="list">
-    <div class="button">Generate</div>
-  </div>
-  <a class="more" routerLink="/hints"><span>Advanced</span></a>
-</div>
+<!--<div *ngIf="characters">-->
+  <!--<ul class="list-group">-->
+    <!--<li class="list-group-item" *ngFor="let character of characters"><span [ngClass]="{unselected: character.isSelected === false}" (click)="unselectOption(character)">{{character.name}}</span></li>-->
+  <!--</ul>-->
+  <!--<div class="list">-->
+    <!--<div class="button">Generate</div>-->
+  <!--</div>-->
+  <!--<a class="more" routerLink="/characters"><span>Advanced</span></a>-->
+<!--</div>-->
+<!--<div *ngIf="hints">-->
+  <!--<ul class="list-group">-->
+    <!--<li class="list-group-item" *ngFor="let hint of hints"><span appSelected>{{hint.type}}</span></li>-->
+  <!--</ul>-->
+  <!--<div class="list">-->
+    <!--<div class="button">Generate</div>-->
+  <!--</div>-->
+  <!--<a class="more" routerLink="/hints"><span>Advanced</span></a>-->
+<!--</div>-->
 
 

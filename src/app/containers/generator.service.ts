@@ -6,10 +6,13 @@ import {map} from "rxjs/operators";
 export class GeneratorService {
   constructor(private httpService: HttpClient) {}
   getGeneratorData(option) {
+    return this.getAllData(option).pipe(map(data => data.filter(character => { return character.type === 'general'})))
+  }
+  getAllData(option) {
     return this.httpService.get<any[]>(`./assets/data/${option}.json`).pipe(
       map(data => { return data.map(item => { return {
-      ...item, isSelected: true, isChosen: false
-    }})})
+        ...item, isSelected: true, isChosen: false
+      }})})
     );
   }
 }

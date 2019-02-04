@@ -1,23 +1,31 @@
-import {Component, AfterViewInit, Input, Output, EventEmitter} from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  Input,
+  Output,
+  EventEmitter,
+  AfterContentInit,
+  AfterContentChecked
+} from '@angular/core';
 
 @Component({
 	selector: 'app-generator',
 	templateUrl: './generator.component.html',
 	styleUrls: ['./generator.component.sass', './advanced.component.sass']
 })
-export class GeneratorComponent implements AfterViewInit {
+export class GeneratorComponent {
   @Input() characters;
   @Input() hints;
-  @Input() genres;
+  @Input() items;
   @Input() selectedGenres;
   @Input() selectedCharacters;
   @Output() genreUnselected = new EventEmitter<any>();
   @Output() characterUnselected = new EventEmitter<any>();
   generatedGenre;
 
-  ngAfterViewInit () {
-    this.selectedCharacters = this.selectedCharacters.filter( character => { return character.type === 'general'});
-  }
+  // ngAfterContentChecked () {
+  //   this.selectedCharacters = this.selectedCharacters.filter( character => { return character.type === 'general'});
+  // }
 
   unselectOption(option) {
     option.isSelected = !option.isSelected;
