@@ -3,7 +3,7 @@
     <div [ngClass]="{ addition: addHidden === true}" class="add-link" (click)="onAddOption()">+ <span>Add option</span></div>
     <div [ngClass]="{ addition: addHidden === false}" class="add-active">
       <input type="text" [(ngModel)]="optionName">
-      <button class="btn" (click)="addGeneratorItem(optionName)">&#10003;</button>
+      <button class="btn" [disabled]="optionName.length < 2" (click)="addGeneratorItem(optionName)">&#10003;</button>
     </div>
   </div>
   <ul class="list-group">

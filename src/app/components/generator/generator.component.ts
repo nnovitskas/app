@@ -16,7 +16,7 @@ export class GeneratorComponent {
   @Output() itemUnselected = new EventEmitter<any>();
   generatedItem;
   addHidden = true;
-  optionName;
+  optionName = '';
 
   onAddOption() {
     this.addHidden = !this.addHidden;
