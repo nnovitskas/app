@@ -1,29 +1,20 @@
 <div *ngIf="items">
-  <ul class="list-group" >
-    <li class="list-group-item" *ngFor="let item of items"><span [ngClass]="{unselected: item.isSelected === false}" (click)="unselectOption(item)">{{item.name}}</span></li>
+  <div class="links">
+    <div [ngClass]="{ addition: addHidden === true}" class="add-link" (click)="onAddOption()">+ <span>Add option</span></div>
+    <div [ngClass]="{ addition: addHidden === false}" class="add-active">
+      <input type="text" [(ngModel)]="optionName">
+      <button class="btn" (click)="addGeneratorItem(optionName)">&#10003;</button>
+    </div>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of items">
+      <span [ngClass]="{ unselected: item.isSelected === false }" (click)="unselectOption(item)">{{ viewType === 'hints' ? item.type : item.name }}</span>
+    </li>
   </ul>
   <div class="list">
     <div class="button" (click)="onGenerate()">Generate</div>
   </div>
-  <div *ngIf="generatedGenre">Result: {{ generatedGenre.name }}</div>
+  <div *ngIf="generatedItem">Result: {{ generatedItem.name }}</div>
+  <a *ngIf="viewType" class="more" [routerLink]="viewType === 'hints' ? '/hints' : '/characters'"><span>Advanced</span></a>
 </div>
-<!--<div *ngIf="characters">-->
-  <!--<ul class="list-group">-->
-    <!--<li class="list-group-item" *ngFor="let character of characters"><span [ngClass]="{unselected: character.isSelected === false}" (click)="unselectOption(character)">{{character.name}}</span></li>-->
-  <!--</ul>-->
-  <!--<div class="list">-->
-    <!--<div class="button">Generate</div>-->
-  <!--</div>-->
-  <!--<a class="more" routerLink="/characters"><span>Advanced</span></a>-->
-<!--</div>-->
-<!--<div *ngIf="hints">-->
-  <!--<ul class="list-group">-->
-    <!--<li class="list-group-item" *ngFor="let hint of hints"><span appSelected>{{hint.type}}</span></li>-->
-  <!--</ul>-->
-  <!--<div class="list">-->
-    <!--<div class="button">Generate</div>-->
-  <!--</div>-->
-  <!--<a class="more" routerLink="/hints"><span>Advanced</span></a>-->
-<!--</div>-->
-
 

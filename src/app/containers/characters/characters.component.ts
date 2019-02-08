@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {GeneratorService} from "../generator.service";
-import {tap} from "rxjs/operators";
 
 @Component({
   selector: 'app-characters',
@@ -9,11 +8,10 @@ import {tap} from "rxjs/operators";
 })
 export class CharactersComponent implements OnInit {
   characters$;
-  selectedCharacters;
   constructor (private generatorContService: GeneratorService) {}
 
   ngOnInit () {
-    this.characters$ = this.generatorContService.getGeneratorData('characters').pipe(tap(data => {this.selectedCharacters = data}));
+    this.characters$ = this.generatorContService.getGeneralCharactersData('characters', 'general');
   }
 
 }

@@ -12,7 +12,7 @@ export class HintsComponent implements OnInit {
   constructor (private generatorContService: GeneratorService) {}
 
   ngOnInit () {
-    this.hints$ = this.generatorContService.getGeneratorData('hints');
+    this.hints$ = this.generatorContService.getAllData('hints');
   }
 
 }

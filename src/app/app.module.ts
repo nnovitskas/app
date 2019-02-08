@@ -12,6 +12,7 @@ import { SelectedDirective } from './containers/selected.directive';
 import { Routes, RouterModule} from "@angular/router";
 import { CharactersComponent } from './containers/characters/characters.component';
 import { HintsComponent } from './containers/hints/hints.component';
+import {FormsModule} from "@angular/forms";
 
 const appRouts: Routes = [
   { path: '', component: MainComponent},
@@ -34,7 +35,8 @@ const appRouts: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRouts)
+    RouterModule.forRoot(appRouts),
+    FormsModule
   ],
   providers: [GeneratorService],
   bootstrap: [AppComponent]

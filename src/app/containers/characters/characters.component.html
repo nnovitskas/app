@@ -3,8 +3,8 @@
   <div class="col-md-6">
     <p>Characters</p>
     <img src="assets/images/liner.png">
-    <div *ngIf="characters$ | async">
-      <app-generator [selectedCharacters]="selectedCharacters"></app-generator>
+    <div *ngIf="(characters$ | async) as characters">
+      <app-generator [items]="characters"></app-generator>
     </div>
   </div>
   <div class="col-md-3"></div>

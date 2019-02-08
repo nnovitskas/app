@@ -12,15 +12,18 @@
     padding-top: 4px
     margin-bottom: 5px
     cursor: pointer
+    &:hover
+      background-color: #81B04C
 
 .more
   color: #8dc153
   text-decoration: underline
   &:hover
     text-decoration: none
+    color: #81B04C
 
 .list-group
-  margin-top: 15px
+  margin-top: 10px
   .list-group-item
     border: none
     padding: 4px 1.25rem
@@ -30,6 +33,37 @@
       width: 150px
       height: 32px
       cursor: pointer
+      &:hover
+        border: 2px solid #b6d791
       &.unselected
         border: 2px solid #eaebec
         color: #eaebec
+.links
+  display: flex
+  justify-content: flex-end
+  text-align: left
+  color: #8c9398
+  text-decoration: none
+  font-size: 16px
+  cursor: pointer
+  .addition.add-link, .addition.add-active
+    display: block
+  .add-link, .add-active
+    display: none
+    width: 200px
+    height: 30px
+    span
+      &:hover
+        text-decoration: underline
+    input
+      width: 135px
+    button
+      color: #fff
+      background-color: #8dc153
+      margin-left: 2px
+      border-radius: 0
+      vertical-align: bottom
+      padding: 0px 8px
+      font-size: 19px
+      &:hover
+        background-color: #81B04C

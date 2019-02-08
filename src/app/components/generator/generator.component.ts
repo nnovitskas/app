@@ -1,11 +1,8 @@
 import {
   Component,
-  AfterViewInit,
   Input,
   Output,
-  EventEmitter,
-  AfterContentInit,
-  AfterContentChecked
+  EventEmitter
 } from '@angular/core';
 
 @Component({
@@ -14,31 +11,34 @@ import {
 	styleUrls: ['./generator.component.sass', './advanced.component.sass']
 })
 export class GeneratorComponent {
-  @Input() characters;
-  @Input() hints;
   @Input() items;
-  @Input() selectedGenres;
-  @Input() selectedCharacters;
-  @Output() genreUnselected = new EventEmitter<any>();
-  @Output() characterUnselected = new EventEmitter<any>();
-  generatedGenre;
+  @Input() viewType;
+  @Output() itemUnselected = new EventEmitter<any>();
+  generatedItem;
+  addHidden = true;
+  optionName;
 
-  // ngAfterContentChecked () {
-  //   this.selectedCharacters = this.selectedCharacters.filter( character => { return character.type === 'general'});
-  // }
+  onAddOption() {
+    this.addHidden = !this.addHidden;
+  }
+
+  addGeneratorItem(optionName) {
+    this.items.push({name: optionName, isSelected: true, isChosen: false});
+    this.addHidden = !this.addHidden;
+    this.optionName = '';
+  }
 
   unselectOption(option) {
     option.isSelected = !option.isSelected;
-    this.genreUnselected.emit({...option, isSelected: option.isSelected});
-    this.characterUnselected.emit({...option, isSelected: option.isSelected});
+    this.itemUnselected.emit({...option, isSelected: option.isSelected});
   }
 
   onGenerate(){
-    const isAvailable = (genre) => { return genre.isSelected === true && genre.isChosen === false };
-    const currentIndex = this.selectedGenres.filter(isAvailable).length;
+    const isAvailable = (option) => { return option.isSelected === true && option.isChosen === false };
+    const currentIndex = this.items.filter(isAvailable).length;
     const randomIndex = Math.floor(Math.random() * currentIndex);
-    this.generatedGenre = this.selectedGenres.filter(isAvailable)[randomIndex];
-    this.selectedGenres.filter(isAvailable)[randomIndex].isSelected = false;
+    this.generatedItem = this.items.filter(isAvailable)[randomIndex];
+    this.items.filter(isAvailable)[randomIndex].isSelected = false;
 
   }
 }
