@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GeneratorService } from '../generator.service';
+import { GeneratorService } from '../../services/generator.service';
 
 @Component({
   selector: 'app-generator-cont',
@@ -10,11 +10,13 @@ export class GeneratorContComponent implements OnInit {
   genres$;
   characters$;
   hints$;
-  constructor (private generatorContService: GeneratorService) {}
+  constructor (private generatorService: GeneratorService) {}
 
   ngOnInit () {
-    this.genres$ = this.generatorContService.getAllData('genres');
-    this.characters$ = this.generatorContService.getGeneralCharactersData('characters', 'general');
-    this.hints$ = this.generatorContService.getHintsData('hints');
+    this.genres$ = this.generatorService.getAllData('genres');
+    this.characters$ = this.generatorService.getDataByType('characters', 'general');
+    this.hints$ = this.generatorService.getDataByUniqueTypes('hints');
+
   }
+
 }

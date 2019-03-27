@@ -1,38 +1,35 @@
 [
   {
     "name": "adventurer",
-    "type": "general",
-    "gender": "none"
+    "type": "general"
+  },
+  {
+    "name": "barbarian",
+    "type": "general"
   },
   {
     "name": "enthusiast",
-    "type": "general",
-    "gender": "none"
+    "type": "general"
   },
   {
     "name": "hero",
-    "type": "general",
-    "gender": "none"
+    "type": "general"
   },
   {
     "name": "honest citizen",
-    "type": "general",
-    "gender": "none"
+    "type": "general"
   },
   {
     "name": "hothead",
-    "type": "general",
-    "gender": "none"
+    "type": "general"
   },
   {
     "name": "malefactor",
-    "type": "general",
-    "gender": "none"
+    "type": "general"
   },
   {
     "name": "psycho",
-    "type": "general",
-    "gender": "none"
+    "type": "general"
   },
   {
     "name": "Roger",
@@ -43,5 +40,126 @@
     "name": "Melany",
     "type": "specific1",
     "gender": "female"
+  },
+  {
+    "name": "Lorelai",
+    "type": "specific2",
+    "gender": "female"
+  },
+  {
+    "name": "Christopher",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Emily",
+    "type": "specific2",
+    "gender": "female"
+  },
+  {
+    "name": "Richard",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Dean",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Jess",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Luke",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Logan",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Max",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Jackson",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Michel",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Rory",
+    "type": "specific2",
+    "gender": "female"
+  },
+  {
+    "name": "Paris",
+    "type": "specific2",
+    "gender": "female"
+  },
+  {
+    "name": "Soockie",
+    "type": "specific2",
+    "gender": "female"
+  },
+  {
+    "name": "Rachel",
+    "type": "specific2",
+    "gender": "female"
+  },
+  {
+    "name": "Nicole",
+    "type": "specific2",
+    "gender": "female"
+  },
+  {
+    "name": "Kirk",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Jason",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Gypsy",
+    "type": "specific2",
+    "gender": "female"
+  },
+  {
+    "name": "Lane",
+    "type": "specific2",
+    "gender": "female"
+  },
+  {
+    "name": "Lulu",
+    "type": "specific2",
+    "gender": "female"
+  },
+  {
+    "name": "Dave",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Zack",
+    "type": "specific2",
+    "gender": "male"
+  },
+  {
+    "name": "Finn",
+    "type": "specific2",
+    "gender": "male"
   }
+
 ]

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { GeneratorService } from './containers/generator.service';
+import { GeneratorService } from './services/generator.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
@@ -8,17 +8,17 @@ import { MainComponent } from './layouts/main/main.component';
 import { GeneratorComponent } from './components/generator/generator.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GeneratorContComponent } from './containers/generator-cont/generator-cont.component';
-import { SelectedDirective } from './containers/selected.directive';
-import { Routes, RouterModule} from "@angular/router";
 import { CharactersComponent } from './containers/characters/characters.component';
 import { HintsComponent } from './containers/hints/hints.component';
-import {FormsModule} from "@angular/forms";
-
-const appRouts: Routes = [
-  { path: '', component: MainComponent},
-  { path: 'characters', component: CharactersComponent },
-  { path: 'hints', component: HintsComponent }
-];
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { AppRoutingModule } from "./app-routing.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatFormFieldModule, MatInputModule,
+  MatRadioModule, MatSelectModule
+} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -28,15 +28,23 @@ const appRouts: Routes = [
     MainComponent,
     GeneratorComponent,
     GeneratorContComponent,
-    SelectedDirective,
     CharactersComponent,
     HintsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRouts),
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
+
   ],
   providers: [GeneratorService],
   bootstrap: [AppComponent]

@@ -2,3 +2,52 @@ p
   color: #353535
   font-size: 24px
   margin-bottom: 0
+.switcher
+  select
+    min-width: 152px
+    min-height: 32px
+    padding-left: 5px
+.links
+  display: flex
+  justify-content: flex-end
+  text-align: left
+  color: #8c9398
+  text-decoration: none
+  font-size: 16px
+  cursor: pointer
+  .addition.add-link, .addition.add-active, .addition.add-gender
+    display: block
+  .add-link, .add-active
+    display: none
+    width: 200px
+    height: 55px
+    span
+      &:hover
+        text-decoration: underline
+    input, .mat-form-field
+      width: 135px
+  .add-gender
+    display: none
+    height: 55px
+    width: 200px
+    .adding-option
+      margin: 0 10px
+    label
+      margin-right: 5px
+      margin-bottom: 2px
+      &:hover
+        color: #212529
+      input
+        width: auto
+        margin-right: 5px
+  .add
+    button
+      color: #fff
+      background-color: #8dc153
+      margin-left: 2px
+      border-radius: 0
+      vertical-align: bottom
+      padding: 0px 8px
+      font-size: 19px
+      &:hover
+        background-color: #81B04C

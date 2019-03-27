@@ -3,8 +3,38 @@
   <div class="col-md-6">
     <p>Characters</p>
     <img src="assets/images/liner.png">
-    <div *ngIf="(characters$ | async) as characters">
-      <app-generator [items]="characters"></app-generator>
+    <div *ngIf="(optionTypes$ | async) as optionTypes" class="switcher">
+      <!--<select name="optionTypes" [(ngModel)]="selectedType" (ngModelChange)="onDataTypeChanged(selectedType)">-->
+        <!--<option *ngFor="let optionType of optionTypes">{{ optionType }}</option>-->
+      <!--</select>-->
+      <mat-form-field>
+        <mat-select [(value)]="selectedType" (selectionChange)="onDataTypeChanged(selectedType)">
+          <mat-option *ngFor="let optionType of optionTypes" [value]="optionType">{{ optionType }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="links">
+      <div [ngClass]="{ addition: addHidden }" class="add-link" (click)="onAddOption()">+ <span>Add option</span></div>
+      <div [ngClass]="{ addition: !addHidden && !genderUnhide }" class="add-active add">
+        <mat-form-field>
+          <input matInput [(ngModel)]="optionName">
+        </mat-form-field>
+        <!--<input type="text" [(ngModel)]="optionName">-->
+        <button class="btn" [disabled]="optionName.length < 2" (click)="addGeneratorItem()">&#10003;</button>
+      </div>
+      <div [ngClass]="{ addition: genderUnhide }" class="add-gender add">
+        <div>Please choose gender:</div>
+        <!--<label><input type="radio" name="gender" value="male" [(ngModel)]="optionGender">Male</label>-->
+        <!--<label><input type="radio" name="gender" value="female" [(ngModel)]="optionGender">Female</label>-->
+        <mat-radio-group [(ngModel)]="optionGender">
+          <mat-radio-button class="adding-option" [value]="'male'">Male</mat-radio-button>
+          <mat-radio-button class="adding-option" [value]="'female'">Female</mat-radio-button>
+        </mat-radio-group>
+        <button class="btn" [disabled]="optionGender === ''" (click)="addGeneratorItemWithGender()">&#10003;</button>
+      </div>
+    </div>
+    <div *ngIf="characters">
+      <app-generator [items]="characters" [viewMode]="'advanced'"></app-generator>
     </div>
   </div>
   <div class="col-md-3"></div>

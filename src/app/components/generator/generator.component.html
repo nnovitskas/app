@@ -1,20 +1,32 @@
-<div *ngIf="items">
-  <div class="links">
-    <div [ngClass]="{ addition: addHidden === true}" class="add-link" (click)="onAddOption()">+ <span>Add option</span></div>
-    <div [ngClass]="{ addition: addHidden === false}" class="add-active">
-      <input type="text" [(ngModel)]="optionName">
-      <button class="btn" [disabled]="optionName.length < 2" (click)="addGeneratorItem(optionName)">&#10003;</button>
+<div [ngClass]="{advanced: viewMode}">
+  <div [ngClass]="{hidden: resultsGotten}">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of items">
+        <span [ngClass]="{ unselected: !item.isSelected}" (click)="unselectOption(item)">{{ getOptionView(item) }}</span>
+      </li>
+    </ul>
+    <div class="settings" *ngIf="viewMode">
+      <p>Generation settings</p>
+      <section class="settings-section">
+        <label>Align:</label>
+        <mat-radio-group>
+          <mat-radio-button class="settings-option" value="one">One</mat-radio-button>
+          <mat-radio-button class="settings-option" value="two">Two</mat-radio-button>
+        </mat-radio-group>
+      </section>
+    </div>
+    <div class="generation">
+      <button class="btn" (click)="onGenerate()">Generate</button>
     </div>
   </div>
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let item of items">
-      <span [ngClass]="{ unselected: item.isSelected === false }" (click)="unselectOption(item)">{{ viewType === 'hints' ? item.type : item.name }}</span>
-    </li>
-  </ul>
-  <div class="list">
-    <div class="button" (click)="onGenerate()">Generate</div>
+  <div *ngIf="generatedResults.length > 0" class="results">
+    <p>Results:</p>
+    <div *ngFor="let result of generatedResults"> {{ result.name }} </div>
+    <div *ngIf="generatedResults.length > 2" class="generation">
+      <button class="btn">Save</button>
+      <button class="btn" (click)="onGenerateAgain()">Again</button>
+    </div>
   </div>
-  <div *ngIf="generatedItem">Result: {{ generatedItem.name }}</div>
-  <a *ngIf="viewType" class="more" [routerLink]="viewType === 'hints' ? '/hints' : '/characters'"><span>Advanced</span></a>
+  <a *ngIf="viewType && !viewMode" class="more" [routerLink]="'/' + viewType"><span>Advanced</span></a>
 </div>
 

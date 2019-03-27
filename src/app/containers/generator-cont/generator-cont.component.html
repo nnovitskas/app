@@ -17,7 +17,7 @@
     <p>Short hints</p>
     <img src="assets/images/liner.png">
     <div *ngIf="(hints$ | async) as hints">
-      <app-generator [items]="hints" [viewType]="'hints'"></app-generator>
+        <app-generator [items]="hints" [viewType]="'hints'"></app-generator>
     </div>
   </div>
 </div>

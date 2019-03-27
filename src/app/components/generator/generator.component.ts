@@ -13,19 +13,13 @@ import {
 export class GeneratorComponent {
   @Input() items;
   @Input() viewType;
+  @Input() viewMode;
   @Output() itemUnselected = new EventEmitter<any>();
-  generatedItem;
-  addHidden = true;
-  optionName = '';
+  generatedResults = [];
+  resultsGotten = false;
 
-  onAddOption() {
-    this.addHidden = !this.addHidden;
-  }
-
-  addGeneratorItem(optionName) {
-    this.items.push({name: optionName, isSelected: true, isChosen: false});
-    this.addHidden = !this.addHidden;
-    this.optionName = '';
+  getOptionView(item) {
+    return this.viewType === 'hints' ? item.key : item.name;
   }
 
   unselectOption(option) {
@@ -33,12 +27,29 @@ export class GeneratorComponent {
     this.itemUnselected.emit({...option, isSelected: option.isSelected});
   }
 
-  onGenerate(){
-    const isAvailable = (option) => { return option.isSelected === true && option.isChosen === false };
-    const currentIndex = this.items.filter(isAvailable).length;
-    const randomIndex = Math.floor(Math.random() * currentIndex);
-    this.generatedItem = this.items.filter(isAvailable)[randomIndex];
-    this.items.filter(isAvailable)[randomIndex].isSelected = false;
-
+  isAvailable(option) {
+    return option.isSelected && !option.isChosen;
   }
+
+  isAlreadyGenerated(option) {
+    option.isSelected = option.isSelected ? option.isSelected : !option.isSelected;
+  }
+
+  onGenerate(){
+    const currentIndex = this.items.filter(this.isAvailable).length;
+    const randomIndex = Math.floor(Math.random() * currentIndex);
+    const randomResult = this.items.filter(this.isAvailable)[randomIndex];
+    this.generatedResults.push(randomResult);
+    this.resultsGotten = this.generatedResults.length > 2;
+    randomResult.isSelected = false;
+  }
+
+  onGenerateAgain() {
+    this.generatedResults = [];
+    this.resultsGotten = !this.resultsGotten;
+    this.items.filter(this.isAlreadyGenerated);
+  }
+
+
+
 }
